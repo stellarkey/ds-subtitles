@@ -1,0 +1,461 @@
+﻿1
+00:00:00,001 --> 00:00:04,001
+XuetangX MOOC OSSG: Ray
+
+2
+00:00:04,611 --> 00:00:09,000
+For example, we can make improvements according to such a demostration
+
+3
+00:00:09,906 --> 00:00:10,948
+Specifically
+
+4
+00:00:10,973 --> 00:00:16,823
+We always divide the entire sequence into two parts on the left and right each time
+
+5
+00:00:17,165 --> 00:00:19,196
+Here I might as well draw them vertically
+
+6
+00:00:19,585 --> 00:00:21,704
+It doesn’t matter, for example, the left side and the right side
+
+7
+00:00:23,546 --> 00:00:24,355
+what's next
+
+8
+00:00:24,561 --> 00:00:27,252
+We solve two subproblems recursively
+
+9
+00:00:28,300 --> 00:00:31,990
+Find the largest element and the second largest element on the left, respectively
+
+10
+00:00:32,149 --> 00:00:35,339
+And the largest and second largest elements on the right
+
+11
+00:00:36,571 --> 00:00:37,436
+what's next
+
+12
+00:00:37,675 --> 00:00:39,992
+The global largest element must come from the larger one between
+
+13
+00:00:40,017 --> 00:00:41,311
+the largest element on the left
+
+14
+00:00:41,336 --> 00:00:44,698
+and the largest element on the right.
+
+15
+00:00:45,241 --> 00:00:47,130
+For this we need to spend a comparison
+
+16
+00:00:47,955 --> 00:00:49,511
+Then of course there are two situations
+
+17
+00:00:49,813 --> 00:00:51,749
+So here is a symmetrical situation
+
+18
+00:00:52,464 --> 00:00:55,178
+It may indeed be the biggest one on the left wins
+
+19
+00:00:55,400 --> 00:00:57,384
+Or maybe the biggest one on the right wins
+
+20
+00:00:57,828 --> 00:01:00,442
+Without loss of generality,
+let’s consider the one on the left.
+
+21
+00:01:00,466 --> 00:01:01,614
+the right side is symmetrical.
+
+22
+00:01:02,209 --> 00:01:05,447
+If after a comparison, we confirm that the left side wins
+
+23
+00:01:05,653 --> 00:01:08,409
+Then we can proceed to the conclusion
+
+24
+00:01:08,434 --> 00:01:13,739
+The global second largest element
+must come from the second largest element
+
+25
+00:01:13,763 --> 00:01:17,513
+on the left, and just now, if it was
+defeated, the largest element on the right
+
+26
+00:01:18,663 --> 00:01:22,917
+Similarly, we can confirm the winner among them through a comparison
+
+27
+00:01:23,303 --> 00:01:30,176
+Attention, here, the second largest sub-problem that we
+just failed does not need to participate in the comparison.
+
+28
+00:01:31,382 --> 00:01:32,430
+Let's take a look
+
+29
+00:01:32,620 --> 00:01:35,636
+Such ideas can be organized into such a piece of code
+
+30
+00:01:35,986 --> 00:01:37,763
+Of course there are also degraded situations here
+
+31
+00:01:37,795 --> 00:01:40,683
+We put the realization and explanation of such a degraded situation
+
+32
+00:01:40,708 --> 00:01:41,259
+This task
+
+33
+00:01:41,283 --> 00:01:43,001
+Leave it to the students to finish after class
+
+34
+00:01:45,706 --> 00:01:46,595
+Generally speaking
+
+35
+00:01:46,753 --> 00:01:49,976
+We all take the midpoint of lo and hi
+
+36
+00:01:52,817 --> 00:01:53,436
+And
+
+37
+00:01:53,785 --> 00:01:55,916
+Recursively solve
+
+38
+00:01:55,941 --> 00:02:00,319
+ the x1L, x2L and x1R, x2R we just mentioned
+
+39
+00:02:02,952 --> 00:02:07,487
+Next, we compare the largest of the two subintervals once
+
+40
+00:02:07,714 --> 00:02:10,242
+You can determine the winner
+
+41
+00:02:10,267 --> 00:02:11,478
+Is the biggest of the whole world
+
+42
+00:02:11,693 --> 00:02:13,179
+Or him (x1L), or him (x1R)
+
+43
+00:02:15,895 --> 00:02:16,938
+Well, just now we said
+
+44
+00:02:17,143 --> 00:02:19,886
+The picture on the left corresponds to the case of if
+
+45
+00:02:20,181 --> 00:02:22,573
+The picture on the right corresponds to the situation of else
+
+46
+00:02:25,384 --> 00:02:29,148
+Furthermore, how to determine the global second largest element x2?
+
+47
+00:02:29,998 --> 00:02:30,621
+We can see that
+
+48
+00:02:30,667 --> 00:02:32,050
+Whether it is <b>if</b> or <b>else</b>
+
+49
+00:02:32,130 --> 00:02:32,731
+He is symmetrical
+
+50
+00:02:32,935 --> 00:02:35,463
+We just need to compare again
+
+51
+00:02:38,051 --> 00:02:40,681
+This comparison actually corresponds to this
+
+52
+00:02:41,373 --> 00:02:42,303
+Let's review again
+
+53
+00:02:42,450 --> 00:02:43,607
+Just now this is a comparison
+
+54
+00:02:43,698 --> 00:02:45,557
+Actually, corresponds to this
+
+55
+00:02:45,750 --> 00:02:46,952
+Or that
+
+56
+00:02:47,598 --> 00:02:49,208
+The latter two comparisons
+
+57
+00:02:49,333 --> 00:02:50,636
+Correspondingly, this
+
+58
+00:02:51,158 --> 00:02:51,940
+Or that
+
+59
+00:02:52,356 --> 00:02:53,297
+We can see that
+
+60
+00:02:53,547 --> 00:02:54,941
+Anyway
+
+61
+00:02:55,089 --> 00:02:57,413
+In every recursive instance
+
+62
+00:02:57,708 --> 00:02:59,658
+Even in the worst case
+
+63
+00:02:59,726 --> 00:03:02,401
+We only need to do it once at most
+
+64
+00:03:02,425 --> 00:03:03,762
+And compare twice
+
+65
+00:03:04,490 --> 00:03:05,544
+This is why
+
+66
+00:03:05,568 --> 00:03:08,254
+This can be written in a recursive equation
+
+67
+00:03:08,640 --> 00:03:13,773
+T(n) should be a subproblem equal to twice the scale of T(n/2)
+
+68
+00:03:13,798 --> 00:03:14,898
+Which is T(n/2)
+
+69
+00:03:15,506 --> 00:03:16,481
+Plus
+
+70
+00:03:16,844 --> 00:03:17,558
+just now
+
+71
+00:03:17,717 --> 00:03:18,759
+Two comparisons
+
+72
+00:03:20,097 --> 00:03:21,118
+Recursive
+
+73
+00:03:21,186 --> 00:03:22,569
+Use the same method as before
+
+74
+00:03:22,594 --> 00:03:23,932
+We can solve
+
+75
+00:03:24,417 --> 00:03:27,467
+Get 5n/3-2
+
+76
+00:03:28,007 --> 00:03:30,716
+Of course, if you don’t know the specific solution
+
+77
+00:03:30,741 --> 00:03:32,225
+You might as well go verify
+
+78
+00:03:32,281 --> 00:03:34,447
+We say that this result is very easy to verify
+
+79
+00:03:35,014 --> 00:03:36,261
+According to such a formula
+
+80
+00:03:36,386 --> 00:03:38,676
+It can be concluded that T(n/2) is
+
+81
+00:03:38,780 --> 00:03:39,686
+Then substitute in
+
+82
+00:03:39,868 --> 00:03:41,433
+It is not difficult to verify such a result
+
+83
+00:03:42,306 --> 00:03:44,199
+What we need to point out here is
+
+84
+00:03:44,299 --> 00:03:45,569
+Indeed we can see
+
+85
+00:03:45,637 --> 00:03:47,157
+If the previous method
+
+86
+00:03:47,247 --> 00:03:50,354
+The number of comparisons required in the worst case
+
+87
+00:03:50,547 --> 00:03:52,406
+In terms of the constant coefficient of n
+
+88
+00:03:52,463 --> 00:03:53,393
+If it is 2
+
+89
+00:03:53,965 --> 00:03:54,634
+now
+
+90
+00:03:54,827 --> 00:03:55,383
+it's here
+
+91
+00:03:55,507 --> 00:03:57,276
+Down to 5/3
+
+92
+00:03:58,058 --> 00:03:58,795
+We can see that
+
+93
+00:03:58,943 --> 00:04:00,689
+He has a definite drop
+
+94
+00:04:01,258 --> 00:04:02,868
+This decline, let
+me emphasize again
+
+95
+00:04:03,073 --> 00:04:05,329
+even in the worst case
+
+96
+00:04:05,353 --> 00:04:06,565
+Can also be guaranteed
+
+97
+00:04:07,808 --> 00:04:09,237
+Of course, in the best case
+
+98
+00:04:09,261 --> 00:04:10,065
+How good would it be
+
+99
+00:04:10,757 --> 00:04:11,948
+We also put this question
+
+100
+00:04:12,129 --> 00:04:14,147
+Leave it to everyone to think after class
+
+101
+00:04:25,395 --> 00:04:26,348
+So to summarize
+
+102
+00:04:26,427 --> 00:04:28,569
+The main content of our section is
+
+103
+00:04:29,021 --> 00:04:31,526
+Teach you iterative and recursive algorithms
+
+104
+00:04:35,114 --> 00:04:38,107
+Strategies that include two important algorithms
+
+105
+00:04:38,487 --> 00:04:40,312
+Reduce and conquer and divide and conquer
+
+106
+00:04:41,211 --> 00:04:42,107
+more importantly
+
+107
+00:04:42,131 --> 00:04:44,409
+Introduction and examples of combining these two strategies
+
+108
+00:04:44,830 --> 00:04:45,691
+We give
+
+109
+00:04:45,717 --> 00:04:49,263
+Two typical common analysis methods of recursive algorithms
+
+110
+00:04:50,312 --> 00:04:52,534
+Recursive tracking and recursive
+
+111
+00:04:53,407 --> 00:04:54,121
+Later
+
+112
+00:04:54,348 --> 00:04:55,470
+We will see
+
+113
+00:04:55,494 --> 00:04:57,080
+More and more complicated
+
+114
+00:04:57,104 --> 00:04:58,294
+Examples in this regard
+
